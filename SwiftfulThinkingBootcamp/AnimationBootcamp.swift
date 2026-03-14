@@ -28,6 +28,16 @@ struct AnimationBootcamp: View {
                 .offset(y: isAnimation ? 300 : 0)
                 .animation(.default.repeatForever(autoreverses: true), value: isAnimation)
             Spacer()
+            
+            RoundedRectangle(cornerRadius: 25)
+                .fill(.blue)
+                .frame(width: isAnimation ? 350 : 50, height: 100)
+                .animation(Animation.spring(
+                    response: 0.5,
+                    dampingFraction: 0.7,
+                    blendDuration: 1.0
+                ), value: isAnimation)
+            
         }
     }
 }
